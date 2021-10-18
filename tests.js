@@ -1,5 +1,5 @@
-import { calculate_percent } from "./exam_analyser.js";
-
+import { calculate_exam_result, calculate_percent } from "./exam_analyser.js";
+//tests are not covering all cases make sure about this in public release
 function test(test_boolean){
     if(typeof test_boolean != "boolean"){
         console.log("[warning] pass non boolean arg to 'test' func")
@@ -22,4 +22,6 @@ test(calculate_percent({
     negative_mark_mode : false
 }) === 75)
 
-//write another test for 'calculate percent' func to make sure
+test(calculate_exam_result("4343431232","0000000000") === 0)
+test(calculate_exam_result("4343431232","4340000000") === 30)
+test(calculate_exam_result("11111111111111222233","11111111111111111100") === 63)
