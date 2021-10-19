@@ -1,11 +1,11 @@
-import { calculate_exam_result, calculate_percent } from "./exam_analyser.js";
+import { calculate_exam_result, calculate_percent } from "./exam_analyser.ts";
 //tests are not covering all cases make sure about this in public release
 function test(test_boolean){
     if(typeof test_boolean != "boolean"){
         console.log("[warning] pass non boolean arg to 'test' func")
     }else if(test_boolean == true){
         console.log('[test passed]')
-    }else if(test_boolean != true){
+    }else{
         console.log('[test failed]')
     }
 }
