@@ -1,0 +1,36 @@
+html,body{
+    height: 100%;
+    width:100%;
+    margin: 0;
+    padding: 0;
+}
+.box {
+    width: 80%;
+    position: relative;
+    min-height: 100px;
+    background-color: blue;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 8px;
+    color: aqua;
+    padding: 10px;
+    box-sizing: border-box;
+    margin-top: 20px;
+}
+.box h1 {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+.box p {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.main_background{
+    height: 100% ;
+    width: 100%;
+    z-index: -10;
+    background-color: blueviolet;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
