@@ -34,22 +34,37 @@ export default function App(){
         window.api.get()
         set_lesson_items(window.lesson_items)
     }
-    
+    function delete_lesson_item(){
+        var index = Number(prompt('enter index of that lesson item '))
+        window.lesson_items.splice(index, 1);
+        window.api.set()
+        window.api.get()
+        set_lesson_items(window.lesson_items)
+    }
+    function alert_done_lesson_items_percent(){
+        var done_lesson_items = window.lesson_items.filter(i=>i.is_done)
+        window.alert(Math.round((done_lesson_items.length / window.lesson_items.length) * 100))
+    }
     return(
         <>
             <Background color='blue'>
                 <button onClick={()=>add_new_lesson_item_handler()}>add new lesson item</button>
                 <button onClick={()=>automated_add_new_lesson_items()}>automated add new lesson items</button>
+                <button onClick={()=>delete_lesson_item()}>delete lesson item</button>
+                <button onClick={()=>alert(lesson_items.length)}>alert lesson items count</button>
+                <button onClick={()=>alert(window.lesson_items[window.api.get_index_of_random_isnt_done_item()]['lesson_item_name'])}>get random lesson which is not done</button>
+                <button onClick={()=>alert_done_lesson_items_percent()}>get done lesson items percent</button>
+                
                 {lesson_items.map((lesson_item,index)=>{
                     return(
                         <React.Fragment key={index}>
                             <div onClick={()=>CheckBox_onclick_handler(index)}>
-                                <ListOption title={lesson_item.lesson_item_name} content={lesson_item.is_done ? "it is done" :"it is not done"} />
+                                <ListOption title={lesson_item.lesson_item_name + `[index : ${index}]`} content={lesson_item.is_done ? "it is done" :"it is not done"} />
                             </div>
                         </React.Fragment>
                     )
                 })}
-                <h1>{JSON.stringify(lesson_items)}</h1>
+                <p style={{color:"white"}}>{JSON.stringify(lesson_items)}</p>
             </Background>
             
             
