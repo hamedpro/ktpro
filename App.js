@@ -19,10 +19,26 @@ export default function App(){
             set_lesson_items(window.lesson_items)
         }
     }
+    function automated_add_new_lesson_items(){
+        var lesson_name = prompt("enter lesson name : ")
+        var sections_count = Number(prompt('enter sections count (with keyboard set on english)'))
+        if(isNaN(sections_count)){
+            alert('number was not valid')
+            return true
+        }
+        for(var i=1;i<(sections_count+1);i++){
+            window.api.add_new_lesson_item(lesson_name + ` [بخش ${i}]`)
+
+        }
+        window.api.set()
+        window.api.get()
+        set_lesson_items(window.lesson_items)
+    }
     return(
         <>
             <Background color='blue'>
                 <button onClick={()=>add_new_lesson_item_handler()}>add new lesson item</button>
+                <button onClick={()=>automated_add_new_lesson_items()}>automated add new lesson items</button>
                 {lesson_items.map((lesson_item,index)=>{
                     return(
                         <React.Fragment key={index}>

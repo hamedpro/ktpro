@@ -4,6 +4,7 @@
     "react-dom": "^17.0.2"
   },
   "scripts": {
-    "serve" : "parcel ./index.html --no-cache"
+    "serve" : "parcel ./index.html --no-cache",
+    "build" : "parcel build ./index.html --public-url ./ --dist-dir ./last_github_pages_build"
   }
 }
