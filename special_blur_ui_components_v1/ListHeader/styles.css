@@ -1,0 +1,20 @@
+.ListHeader{
+    height: auto;
+    width : 40%;
+    background-color : rgba(255, 255, 255, 0.229);
+    border-radius: 10px;
+    border:1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    direction: rtl;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-bottom: 10px;  
+    transition: 0.2s;
+}
+.ListHeader:hover{
+    background-color : rgba(255, 255, 255, 0.3);
+}
+.ListHeader * {
+    direction: rtl;
+    color: white;
+}
