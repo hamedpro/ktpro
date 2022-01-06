@@ -34,6 +34,7 @@ export default function App(){
         window.api.get()
         set_lesson_items(window.lesson_items)
     }
+    
     return(
         <>
             <Background color='blue'>
@@ -48,6 +49,7 @@ export default function App(){
                         </React.Fragment>
                     )
                 })}
+                <h1>{JSON.stringify(lesson_items)}</h1>
             </Background>
             
             
